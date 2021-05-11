@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 
 namespace Operation_Dragoon
 {
@@ -13,11 +15,11 @@ namespace Operation_Dragoon
             while(!exit)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Please enter a query to get information based on the war, Operation Dragoon!");
+                WriteLineWordWrap("Please enter a query to get information based on the war, Operation Dragoon!");
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("Avaiable entries are \"who\", \"what\", \"where\", \"when\", \"why\", and \"how\", along with \"objective\", to learn more about the objective of the war, " +
-                    "\"result\", to see what the result of the war was, and \"effects\" to learn more about the long term effects of the war. " +
-                    "You can also type \"quit\" to quit, and \"about\" to see who this was made by!");
+                WriteLineWordWrap("Avaiable entries are \"who\", \"what\", \"where\", \"when\", \"why\", and \"how\"." +
+                    " You could also do \"result\", to see what the result of the war was, and \"effects\" to learn more about the long term effects of the war. " +
+                    "You can also type \"quit\" to quit, and \"about\" to see who made this!");
                 Console.ForegroundColor = ConsoleColor.White;
                 string entry = Console.ReadLine();
                 switch (entry)
@@ -25,7 +27,7 @@ namespace Operation_Dragoon
                     case "who":
                         Console.WriteLine();
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("The ground forces on the Allied side were the United States, France, United Kingdom, and Canada. The Allies Air Support was Australia, and South Africa. The Allies Naval Support was Greece, and New Zealand. The people the Allies were fighting against were the Germans.");
+                        WriteLineWordWrap("The ground forces on the Allied side were the United States, France, United Kingdom, and Canada. The Allies Air Support was Australia, and South Africa. The Allies Naval Support was Greece, and New Zealand. The people the Allies were fighting against were the Germans.");
                         System.Threading.Thread.Sleep(4000);
                         Console.WriteLine();
                         Console.WriteLine();
@@ -34,29 +36,29 @@ namespace Operation_Dragoon
                     case "where":
                         Console.WriteLine();
                         Console.ForegroundColor = ConsoleColor.DarkGreen;
-                        Console.WriteLine("Operation Dragoon happened in one spot, happening in Côte d'Azur, South France.");
+                        WriteLineWordWrap("Operation Dragoon happened in one spot, happening in Côte d'Azur, South France.");
                         System.Threading.Thread.Sleep(2000);
                         Console.WriteLine();
                         Console.WriteLine();
-                        Console.WriteLine("Would you like me to open a picture depecting a map before the war? (y/n)");
+                        WriteLineWordWrap("Would you like me to open a picture depecting a map before the war? (y/n)");
                         Console.ForegroundColor = ConsoleColor.White;
                         string whereanswer = Console.ReadLine();
                         Console.ForegroundColor = ConsoleColor.DarkGreen;
                         if (whereanswer == "y")
                         {
                             OpenURL("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Operation_Dragoon_-_map.jpg/450px-Operation_Dragoon_-_map.jpg");
-                            Console.WriteLine("As mentioned above, this is a image...");
+                            WriteLineWordWrap("As mentioned above, this is a image...");
                         }
                         Console.WriteLine();
                         Console.WriteLine();
-                        Console.WriteLine("Would you like to see a picture of where the landings were? (y/n)");
+                        WriteLineWordWrap("Would you like to see a picture of where the landings were? (y/n)");
                         Console.ForegroundColor = ConsoleColor.White;
                         whereanswer = Console.ReadLine();
                         if (whereanswer == "y")
                         {
                             OpenURL("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Anvildragoon.png/330px-Anvildragoon.png");
                             Console.ForegroundColor = ConsoleColor.DarkGreen;
-                            Console.WriteLine("This image depicts all of the landing spots");
+                            WriteLineWordWrap("This image depicts all of the landing spots");
                         }
                         Console.WriteLine();
                         Console.WriteLine();
@@ -65,7 +67,43 @@ namespace Operation_Dragoon
                     case "when":
                         Console.WriteLine();
                         Console.ForegroundColor = ConsoleColor.Magenta;
-                        Console.WriteLine("Operation Dragoon started on August 15th, 1944, and came to an end on September 14th 1944.");
+                        WriteLineWordWrap("Operation Dragoon started on August 15th, 1944, and came to an end on September 14th 1944.");
+                        System.Threading.Thread.Sleep(2000);
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        break;
+
+                    case "why":
+                        Console.WriteLine();
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        WriteLineWordWrap("The goal of the invasion was to secure the vital ports on the French Mediterranean coast and increase pressure on the German forces by opening another front. They also liberated most of southern france.");
+                        System.Threading.Thread.Sleep(2000);
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        break;
+
+                    case "how":
+                        Console.WriteLine();
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        WriteLineWordWrap("On August 14th, a heavy naval bombardment, carried on for an hour before the first landings at approximately 0800, Destroyers provided close-in gunfire support throughout the operation and U.S. Navy and Royal Navy carrier aircraft provided air support.");
+                        System.Threading.Thread.Sleep(2000);
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        break;
+
+                    case "result":
+                        Console.WriteLine();
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        WriteLineWordWrap("The result of Operation Dragoon was an Allied Victory. It enabled the Allies to liberate most of Southern France in only four weeks. In the process, they inflicted heavy casualties on the German forces.");
+                        System.Threading.Thread.Sleep(2000);
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        break;
+
+                    case "effects":
+                        Console.WriteLine();
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        WriteLineWordWrap("Operation Dragoon led to the Allied Forces being able to use Southern Frances Ports to launch their battleships.  They were also able to use Southern Frances Railroads so they could deliver supplies to the Allies on the front lines.");
                         System.Threading.Thread.Sleep(2000);
                         Console.WriteLine();
                         Console.WriteLine();
@@ -80,9 +118,9 @@ namespace Operation_Dragoon
                     case "about":
                         Console.WriteLine();
                         Console.ForegroundColor = ConsoleColor.DarkCyan;
-                        Console.WriteLine("Made by.... Well, somebody");
+                        WriteLineWordWrap("Made by.... Well, somebody");
                         System.Threading.Thread.Sleep(2000);
-                        Console.WriteLine("Would you like me to open up a link to the source code?");
+                        WriteLineWordWrap("Would you like me to open up a link to the source code?");
                         string aboutanswer = Console.ReadLine();
                         if (aboutanswer == "y") OpenURL("https://github.com/lXxMangoxXl/Operation-Dragoon-Project/blob/master/Operation%20Dragoon/Program.cs");
                         Console.WriteLine();
@@ -127,6 +165,35 @@ namespace Operation_Dragoon
                 }
             }
             return;
+        }
+
+        public static void WriteLineWordWrap(string paragraph, int tabSize = 8)
+        {
+            string[] lines = paragraph
+                .Replace("\t", new String(' ', tabSize))
+                .Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
+
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string process = lines[i];
+                List<String> wrapped = new List<string>();
+
+                while (process.Length > Console.WindowWidth)
+                {
+                    int wrapAt = process.LastIndexOf(' ', Math.Min(Console.WindowWidth - 1, process.Length));
+                    if (wrapAt <= 0) break;
+
+                    wrapped.Add(process.Substring(0, wrapAt));
+                    process = process.Remove(0, wrapAt + 1);
+                }
+
+                foreach (string wrap in wrapped)
+                {
+                    Console.WriteLine(wrap);
+                }
+
+                Console.WriteLine(process);
+            }
         }
     }
 }
