@@ -15,7 +15,9 @@ namespace Operation_Dragoon
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Please enter a query to get information based on the war, Operation Dragoon!");
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("Avaiable entries are \"who\", \"what\", \"where\", \"when\", \"why\", and \"how\". You can also type \"quit\" to quit, and \"about\" to see who this was made by!");
+                Console.WriteLine("Avaiable entries are \"who\", \"what\", \"where\", \"when\", \"why\", and \"how\", along with \"objective\", to learn more about the objective of the war, " +
+                    "\"result\", to see what the result of the war was, and \"effects\" to learn more about the long term effects of the war. " +
+                    "You can also type \"quit\" to quit, and \"about\" to see who this was made by!");
                 Console.ForegroundColor = ConsoleColor.White;
                 string entry = Console.ReadLine();
                 switch (entry)
@@ -23,8 +25,39 @@ namespace Operation_Dragoon
                     case "who":
                         Console.WriteLine();
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("The countries that fought in the war are...");
+                        Console.WriteLine("The ground forces on the Allied side were the United States, France, United Kingdom, and Canada. The Allies Air Support was Australia, and South Africa. The Allies Naval Support was Greece, and New Zealand. The people the Allies were fighting against were the Germans.");
+                        System.Threading.Thread.Sleep(4000);
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        break;
+
+                    case "where":
+                        Console.WriteLine();
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        Console.WriteLine("Operation Dragoon happened in one spot, happening in Côte d'Azur, South France.");
                         System.Threading.Thread.Sleep(2000);
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("Would you like me to open a picture depecting a map before the war? (y/n)");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        string whereanswer = Console.ReadLine();
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        if (whereanswer == "y")
+                        {
+                            OpenURL("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Operation_Dragoon_-_map.jpg/450px-Operation_Dragoon_-_map.jpg");
+                            Console.WriteLine("As mentioned above, this is a image...");
+                        }
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("Would you like to see a picture of where the landings were? (y/n)");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        whereanswer = Console.ReadLine();
+                        if (whereanswer == "y")
+                        {
+                            OpenURL("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Anvildragoon.png/330px-Anvildragoon.png");
+                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                            Console.WriteLine("This image depicts all of the landing spots");
+                        }
                         Console.WriteLine();
                         Console.WriteLine();
                         break;
@@ -52,37 +85,6 @@ namespace Operation_Dragoon
                         Console.WriteLine("Would you like me to open up a link to the source code?");
                         string aboutanswer = Console.ReadLine();
                         if (aboutanswer == "y") OpenURL("https://github.com/lXxMangoxXl/Operation-Dragoon-Project/blob/master/Operation%20Dragoon/Program.cs");
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        break;
-
-                    case "where":
-                        Console.WriteLine();
-                        Console.ForegroundColor = ConsoleColor.DarkGreen;
-                        Console.WriteLine("Operation Dragoon happened in one spot, happening in Côte d'Azur, South France.");
-                        System.Threading.Thread.Sleep(2000);
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Would you like me to open a picture depecting a map before the war? (y/n)");
-                        Console.ForegroundColor = ConsoleColor.White;
-                        string answer = Console.ReadLine();
-                        Console.ForegroundColor = ConsoleColor.DarkGreen;
-                        if (answer == "y")
-                        {
-                            OpenURL("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Operation_Dragoon_-_map.jpg/450px-Operation_Dragoon_-_map.jpg");
-                            Console.WriteLine("As mentioned above, this is a image...");
-                        }
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Would you like to see a picture of where the landings were? (y/n)");
-                        Console.ForegroundColor = ConsoleColor.White;
-                        answer = Console.ReadLine();
-                        if(answer == "y")
-                        {
-                            OpenURL("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Anvildragoon.png/330px-Anvildragoon.png");
-                            Console.ForegroundColor = ConsoleColor.DarkGreen;
-                            Console.WriteLine("This image depicts all of the landing spots");
-                        }
                         Console.WriteLine();
                         Console.WriteLine();
                         break;
