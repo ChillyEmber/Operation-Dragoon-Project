@@ -36,7 +36,7 @@ namespace Operation_Dragoon
 
                     case "what":
                         Console.WriteLine();
-                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.ForegroundColor = ConsoleColor.Blue;
                         WriteLineWordWrap("On August 14th a heavy naval bombardment, carried on for an hour before the first landings at approximately 8:00. Destroyers provided gunfire support throughout the operation, and the  U.S. Navy and Royal Navy carrier aircraft provided air support, all ending up in a success for the Allies with minimal resistance.");
                         System.Threading.Thread.Sleep(4000);
                         Console.WriteLine();
