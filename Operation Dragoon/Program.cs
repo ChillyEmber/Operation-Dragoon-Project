@@ -18,11 +18,12 @@ namespace Operation_Dragoon
                 WriteLineWordWrap("Please enter a query to get information based on the war, Operation Dragoon!");
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 WriteLineWordWrap("Avaiable entries are \"who\", \"what\", \"where\", \"when\", \"why\", and \"how\"." +
-                    " You could also do \"result\", to see what the result of the war was, and \"effects\" to learn more about the long term effects of the war. " +
+                    " You could also do \"result\", to see what the result of the war was, \"objectives\", to see the objectives of the war, and \"effects\" to learn more about the long term effects of the war. " +
                     "You can also type \"quit\" to quit, and \"about\" to see who made this!");
                 Console.ForegroundColor = ConsoleColor.White;
                 string entry = Console.ReadLine();
                 entry = entry.ToLower(); //Moves everything to lowercase, so that entry could be something like "WhErE" and still register what it needs to.
+                entry = entry.Trim();
                 switch (entry)
                 {
                     case "who":
