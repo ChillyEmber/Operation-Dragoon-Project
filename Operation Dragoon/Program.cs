@@ -22,6 +22,7 @@ namespace Operation_Dragoon
                     "You can also type \"quit\" to quit, and \"about\" to see who made this!");
                 Console.ForegroundColor = ConsoleColor.White;
                 string entry = Console.ReadLine();
+                entry = entry.ToLower();
                 switch (entry)
                 {
                     case "who":
@@ -44,7 +45,7 @@ namespace Operation_Dragoon
                         Console.ForegroundColor = ConsoleColor.White;
                         string whereanswer = Console.ReadLine();
                         Console.ForegroundColor = ConsoleColor.DarkGreen;
-                        if (whereanswer == "y")
+                        if (whereanswer.Equals("y", StringComparison.OrdinalIgnoreCase))
                         {
                             OpenURL("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Operation_Dragoon_-_map.jpg/450px-Operation_Dragoon_-_map.jpg");
                             WriteLineWordWrap("As mentioned above, this is a image...");
@@ -54,7 +55,7 @@ namespace Operation_Dragoon
                         WriteLineWordWrap("Would you like to see a picture of where the landings were? (y/n)");
                         Console.ForegroundColor = ConsoleColor.White;
                         whereanswer = Console.ReadLine();
-                        if (whereanswer == "y")
+                        if (whereanswer.Equals("y", StringComparison.OrdinalIgnoreCase))
                         {
                             OpenURL("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Anvildragoon.png/330px-Anvildragoon.png");
                             Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -85,7 +86,7 @@ namespace Operation_Dragoon
                     case "how":
                         Console.WriteLine();
                         Console.ForegroundColor = ConsoleColor.Blue;
-                        WriteLineWordWrap("On August 14th, a heavy naval bombardment, carried on for an hour before the first landings at approximately 0800, Destroyers provided close-in gunfire support throughout the operation and U.S. Navy and Royal Navy carrier aircraft provided air support.");
+                        WriteLineWordWrap("On August 14th, a heavy naval bombardment, carried on for an hour before the first landings at approximately 0800, Destroyers provided close-in gunfire support throughout the operation and U.S. Navy and Royal Navy carrier aircraft provided air support, all ending up in a success for the Allies with minimal resistance.");
                         System.Threading.Thread.Sleep(2000);
                         Console.WriteLine();
                         Console.WriteLine();
@@ -102,7 +103,7 @@ namespace Operation_Dragoon
 
                     case "effects":
                         Console.WriteLine();
-                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
                         WriteLineWordWrap("Operation Dragoon led to the Allied Forces being able to use Southern Frances Ports to launch their battleships.  They were also able to use Southern Frances Railroads so they could deliver supplies to the Allies on the front lines.");
                         System.Threading.Thread.Sleep(2000);
                         Console.WriteLine();
@@ -122,7 +123,7 @@ namespace Operation_Dragoon
                         System.Threading.Thread.Sleep(2000);
                         WriteLineWordWrap("Would you like me to open up a link to the source code?");
                         string aboutanswer = Console.ReadLine();
-                        if (aboutanswer == "y") OpenURL("https://github.com/lXxMangoxXl/Operation-Dragoon-Project/blob/master/Operation%20Dragoon/Program.cs");
+                        if (aboutanswer.Equals("y", StringComparison.OrdinalIgnoreCase)) OpenURL("https://github.com/lXxMangoxXl/Operation-Dragoon-Project/blob/master/Operation%20Dragoon/Program.cs");
                         Console.WriteLine();
                         Console.WriteLine();
                         break;
