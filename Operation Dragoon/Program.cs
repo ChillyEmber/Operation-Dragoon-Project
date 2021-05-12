@@ -121,7 +121,7 @@ namespace Operation_Dragoon
                         Console.ForegroundColor = ConsoleColor.DarkCyan;
                         WriteLineWordWrap("Made by.... Well, somebody");
                         System.Threading.Thread.Sleep(2000);
-                        WriteLineWordWrap("Would you like me to open up a link to the source code?");
+                        WriteLineWordWrap("Would you like me to open up a link to the source code? (y/n)");
                         string aboutanswer = Console.ReadLine();
                         if (aboutanswer.Equals("y", StringComparison.OrdinalIgnoreCase)) OpenURL("https://github.com/lXxMangoxXl/Operation-Dragoon-Project/blob/master/Operation%20Dragoon/Program.cs");
                         Console.WriteLine();
