@@ -22,13 +22,22 @@ namespace Operation_Dragoon
                     "You can also type \"quit\" to quit, and \"about\" to see who made this!");
                 Console.ForegroundColor = ConsoleColor.White;
                 string entry = Console.ReadLine();
-                entry = entry.ToLower();
+                entry = entry.ToLower(); //Moves everything to lowercase, so that entry could be something like "WhErE" and still register what it needs to.
                 switch (entry)
                 {
                     case "who":
                         Console.WriteLine();
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         WriteLineWordWrap("The ground forces on the Allied side were the United States, France, United Kingdom, and Canada. The Allies Air Support was Australia, and South Africa. The Allies Naval Support was Greece, and New Zealand. The people the Allies were fighting against were the Germans.");
+                        System.Threading.Thread.Sleep(4000);
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        break;
+
+                    case "what":
+                        Console.WriteLine();
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        WriteLineWordWrap("On August 14th a heavy naval bombardment, carried on for an hour before the first landings at approximately 8:00. Destroyers provided gunfire support throughout the operation, and the  U.S. Navy and Royal Navy carrier aircraft provided air support, all ending up in a success for the Allies with minimal resistance.");
                         System.Threading.Thread.Sleep(4000);
                         Console.WriteLine();
                         Console.WriteLine();
@@ -45,7 +54,7 @@ namespace Operation_Dragoon
                         Console.ForegroundColor = ConsoleColor.White;
                         string whereanswer = Console.ReadLine();
                         Console.ForegroundColor = ConsoleColor.DarkGreen;
-                        if (whereanswer.Equals("y", StringComparison.OrdinalIgnoreCase))
+                        if (whereanswer.Equals("y", StringComparison.OrdinalIgnoreCase)) //If either y or Y is detected, act on whatever is in the if statement
                         {
                             OpenURL("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Operation_Dragoon_-_map.jpg/450px-Operation_Dragoon_-_map.jpg");
                             WriteLineWordWrap("As mentioned above, this is a image...");
@@ -68,7 +77,7 @@ namespace Operation_Dragoon
                     case "when":
                         Console.WriteLine();
                         Console.ForegroundColor = ConsoleColor.Magenta;
-                        WriteLineWordWrap("Operation Dragoon started on August 15th, 1944, and came to an end on September 14th 1944.");
+                        WriteLineWordWrap("Operation Dragoon started on August 13th, 1944, and came to a end on September 14th 1944, lasting a total of about 30 days.");
                         System.Threading.Thread.Sleep(2000);
                         Console.WriteLine();
                         Console.WriteLine();
@@ -77,7 +86,7 @@ namespace Operation_Dragoon
                     case "why":
                         Console.WriteLine();
                         Console.ForegroundColor = ConsoleColor.Green;
-                        WriteLineWordWrap("The goal of the invasion was to secure the vital ports on the French Mediterranean coast and increase pressure on the German forces by opening another front. They also liberated most of southern france.");
+                        WriteLineWordWrap("The cause of Operation Dragoon was the Allied Forces wanting to help liberate France, and also give themselves an advantage over the Germans in the form of Southern Frances Ports, and Railroads.");
                         System.Threading.Thread.Sleep(2000);
                         Console.WriteLine();
                         Console.WriteLine();
@@ -86,7 +95,7 @@ namespace Operation_Dragoon
                     case "how":
                         Console.WriteLine();
                         Console.ForegroundColor = ConsoleColor.Blue;
-                        WriteLineWordWrap("On August 14th, a heavy naval bombardment, carried on for an hour before the first landings at approximately 0800, Destroyers provided close-in gunfire support throughout the operation and U.S. Navy and Royal Navy carrier aircraft provided air support, all ending up in a success for the Allies with minimal resistance.");
+                        WriteLineWordWrap("The battle resulted in a swift victory for the Allies, with things like communication lines from the Germans going silent, which forced commanders to act separately, and ultimately resulting in the German groups retreating.");
                         System.Threading.Thread.Sleep(2000);
                         Console.WriteLine();
                         Console.WriteLine();
@@ -104,7 +113,7 @@ namespace Operation_Dragoon
                     case "effects":
                         Console.WriteLine();
                         Console.ForegroundColor = ConsoleColor.DarkYellow;
-                        WriteLineWordWrap("Operation Dragoon led to the Allied Forces being able to use Southern Frances Ports to launch their battleships.  They were also able to use Southern Frances Railroads so they could deliver supplies to the Allies on the front lines.");
+                        WriteLineWordWrap("Operation Dragoon led to the Allied Forces being able to use Southern Frances Ports to launch their battleships. They were also able to use Southern Frances Railroads so they could deliver supplies to the Allies on the front lines. ");
                         System.Threading.Thread.Sleep(2000);
                         Console.WriteLine();
                         Console.WriteLine();
@@ -112,6 +121,8 @@ namespace Operation_Dragoon
 
                     case "quit":
                         exit = true;
+                        Console.ForegroundColor = ConsoleColor.DarkCyan;
+                        Console.WriteLine();
                         Console.WriteLine("Goodbye!");
                         System.Threading.Thread.Sleep(2000);
                         break;
