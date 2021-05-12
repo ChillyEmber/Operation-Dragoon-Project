@@ -101,6 +101,15 @@ namespace Operation_Dragoon
                         Console.WriteLine();
                         break;
 
+                    case "objective":
+                        Console.WriteLine();
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        WriteLineWordWrap("The goal of the invasion was to secure the vital ports on the French Mediterranean coast, and increase pressure on the German forces by opening another front. They also liberated most of southern france.");
+                        System.Threading.Thread.Sleep(2000);
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        break;
+
                     case "result":
                         Console.WriteLine();
                         Console.ForegroundColor = ConsoleColor.DarkRed;
