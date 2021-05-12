@@ -36,7 +36,7 @@ namespace Operation_Dragoon
 
                     case "what":
                         Console.WriteLine();
-                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.ForegroundColor = ConsoleColor.Yellow;
                         WriteLineWordWrap("On August 14th a heavy naval bombardment, carried on for an hour before the first landings at approximately 8:00. Destroyers provided gunfire support throughout the operation, and the  U.S. Navy and Royal Navy carrier aircraft provided air support, all ending up in a success for the Allies with minimal resistance.");
                         System.Threading.Thread.Sleep(4000);
                         Console.WriteLine();
@@ -103,7 +103,7 @@ namespace Operation_Dragoon
 
                     case "objective":
                         Console.WriteLine();
-                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.ForegroundColor = ConsoleColor.DarkGray;
                         WriteLineWordWrap("The goal of the invasion was to secure the vital ports on the French Mediterranean coast, and increase pressure on the German forces by opening another front. They also liberated most of southern france.");
                         System.Threading.Thread.Sleep(2000);
                         Console.WriteLine();
